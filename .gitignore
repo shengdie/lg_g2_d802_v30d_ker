@@ -44,7 +44,7 @@ modules.builtin
 /System.map
 /Module.markers
 /Module.symvers
-
+/READY-KERNEL/*.zip
 #
 # Debian directory (make deb-pkg)
 #
