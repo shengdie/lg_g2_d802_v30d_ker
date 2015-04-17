@@ -72,7 +72,7 @@ void destroy_felica_wake_lock(void)
 */
 int get_felica_uart_status(void)
 {
-#if defined(CONFIG_LGE_FELICA_NFC)
+#if defined(CONFIG_LGE_FELICA_NFC) && defined(FELICA_NFC_INTERFACE)
   int waitcount = 3;
   int retrycount = 10;
   int rval = FELICA_UART_NOTAVAILABLE;
@@ -155,7 +155,7 @@ int get_felica_uart_status(void)
 */
 void set_felica_uart_status(_e_snfc_uart_status uart_status)
 {
-#if defined(CONFIG_LGE_FELICA_NFC)
+#if defined(CONFIG_LGE_FELICA_NFC) && defined(FELICA_NFC_INTERFACE)
   FELICA_DEBUG_MSG_MED("[FELICA_COMMON] set_felica_uart_status : %d \n", uart_status);
 
   __snfc_uart_control_set_uart_status(uart_status);
@@ -170,7 +170,7 @@ void set_felica_uart_status(_e_snfc_uart_status uart_status)
 */
 _e_snfc_i2c_status get_felica_i2c_status(void)
 {
-#if defined(CONFIG_LGE_FELICA_NFC)
+#if defined(CONFIG_LGE_FELICA_NFC) && defined(FELICA_NFC_INTERFACE)
   return __snfc_i2c_control_get_status();
 #else
   return I2C_STATUS_NO_USE;
@@ -184,7 +184,7 @@ _e_snfc_i2c_status get_felica_i2c_status(void)
 */
 void set_felica_i2c_status(_e_snfc_i2c_status i2c_status)
 {
-#if defined(CONFIG_LGE_FELICA_NFC)
+#if defined(CONFIG_LGE_FELICA_NFC) && defined(FELICA_NFC_INTERFACE)
   FELICA_DEBUG_MSG_MED("[FELICA_COMMON] set_felica_i2c_status : %d \n", i2c_status);
 
   __snfc_i2c_control_set_status(i2c_status);

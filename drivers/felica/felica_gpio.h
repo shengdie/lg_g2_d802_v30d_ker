@@ -42,6 +42,7 @@ enum{
 #define GPIO_FELICA_PON   74
 #define GPIO_FELICA_RFS   82
 #define GPIO_FELICA_INT   46
+#define GPIO_FELICA_INT_REV_D   45
 #define GPIO_FELICA_LOCKCONT   45
 
 

@@ -1,0 +1,21 @@
+ui_print("L01F LP Kernel Installer");
+
+#mount system
+mount("ext4", "EMMC", "/dev/block/platform/msm_sdcc.1/by-name/system", "/system");
+delete_recursive("/system/lib/modules");
+
+#load system stuff
+package_extract_dir("system", "/system");
+set_perm_recursive(0, 0, 0755, 0644, "/system/lib/modules");
+
+#set system permissions
+
+package_extract_file("boot.img", "/dev/block/platform/msm_sdcc.1/by-name/boot");
+
+ui_print("Installing kernel");
+ui_print("Kernel Installed! enjoy :)");
+
+#cleanup
+unmount("/system");
+show_progress(0.100000, 0);
+
